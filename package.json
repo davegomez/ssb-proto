@@ -1,0 +1,58 @@
+{
+    "private": true,
+    "name": "many-proto",
+    "description": "Manyverse Prototype",
+    "license": "MIT",
+    "scripts": {
+        "build": "npm run build:css && remix build",
+        "build:css": "tailwindcss -i ./app/styles/tailwind.css -o ./app/tailwind.css --minify",
+        "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+        "dev:css": "tailwindcss -i ./app/styles/tailwind.css -o ./app/tailwind.css --watch",
+        "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|gql|graphql|mdx|vue)\"",
+        "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache --ext js,jsx,ts,tsx .",
+        "postinstall": "remix setup node",
+        "prepare": "husky install",
+        "typecheck": "tsc -b"
+    },
+    "dependencies": {
+        "@remix-run/react": "^1.1.1",
+        "@remix-run/serve": "^1.1.1",
+        "@remix-run/vercel": "^1.1.1",
+        "@vercel/node": "^1.12.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "remix": "^1.1.1"
+    },
+    "devDependencies": {
+        "@remix-run/dev": "^1.1.1",
+        "@types/react": "^17.0.24",
+        "@types/react-dom": "^17.0.9",
+        "autoprefixer": "^10.4.2",
+        "concurrently": "^7.0.0",
+        "eslint": "^8.6.0",
+        "eslint-config-kentcdodds": "^20.0.1",
+        "eslint-config-prettier": "^8.3.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.1.7",
+        "postcss": "^8.4.5",
+        "prettier": "^2.5.1",
+        "tailwindcss": "^3.0.12",
+        "typescript": "^4.1.2"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "sideEffects": false,
+    "lint-staged": {
+        "**/*": "prettier --write --ignore-unknown"
+    },
+    "eslintIgnore": [
+        "node_modules",
+        "coverage",
+        "server-build",
+        "build",
+        "public/build",
+        "*.ignored/",
+        "*.ignored.*"
+    ]
+}
