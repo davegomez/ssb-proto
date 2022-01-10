@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from 'remix';
 import type { LinksFunction, MetaFunction } from 'remix';
+import { Layout } from '~/components';
 import styles from './tailwind.css';
 
 export const meta: MetaFunction = () => {
@@ -43,7 +44,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Layout theme="dark">
+          <Outlet />
+        </Layout>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === 'development' && <LiveReload />}
