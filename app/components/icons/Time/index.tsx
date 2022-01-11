@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 interface Props {
   size?: string;
@@ -8,7 +8,7 @@ interface Props {
 export default function Time({ size = '10', theme }: Props) {
   return (
     <svg
-      className={classNames({
+      className={clsx({
         'fill-black': theme === 'dark',
         'fill-white': theme === 'light',
       })}
