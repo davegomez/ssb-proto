@@ -1,12 +1,16 @@
-.vscode/
+.vscode
 .DS_Store
-node_modules/
+node_modules
 
-/.cache
-/build
-/server-build
-/public/build
+.cache
+vercel
+output
+build
+server-build
+public/build
 tsconfig.tsbuildinfo
 
-/app/styles/**/*.css
+public/build
+api/_build
+app/styles/**/*.css
 other/postcss.ignored
